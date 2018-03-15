@@ -1,0 +1,22 @@
+{
+  "name": "MediaPlaybackFramework",
+  "version": "0.0.1",
+  "description": "Media Playback Framework - Front end application for the Media Framework",
+  "repository": "https://github.com/UoSMediaFrameworks/MF-twitter-controller",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "6.11.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "dependencies": {
+    "form-data": "^2.3.2",
+    "socket.io-client": "^2.0.4",
+    "twitter": "^1.7.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
