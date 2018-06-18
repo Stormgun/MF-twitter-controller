@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - npm install
+artifacts:
+  files:
+    - src/*
+    - src/**/*
+    - app.js
+    - package.json
+    - node_modules/*
+    - node_modules/**/*
