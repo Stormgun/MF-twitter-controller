@@ -1,7 +1,5 @@
 var Twitter = require('twitter');
-var apiRequest = require('./api-request');
-var FormData = require('form-data');
-var jsonParser = require('./jsonParser');
+
 var MFAPIConstants = require('../constants/mf-api-constants');
 var client = new Twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
