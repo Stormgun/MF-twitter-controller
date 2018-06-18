@@ -10,72 +10,66 @@ var client = new Twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 var Client = require('node-rest-client').Client;
-var options ={
-    mimetypes:{json: ['application/json', 'application/json; charset=utf-8']},
-}
+var options = {
+    mimetypes: {json: ['application/json', 'application/json; charset=utf-8']},
+};
 var nodeClient = new Client();
 var mfOjbect = {};
-var checkForScenes = function(text){
-    var msg = text.toLowerCase();
-    var strArr = msg.split(' ');
+var checkForScenes = function (text) {
+    var strArr = text.split(' ');
     if (strArr.indexOf('#scene:') !== -1) {
         var i = strArr.indexOf('#scene:');
-        var sceneName = strArr[i+1];
+        var sceneName = strArr[i + 1];
         console.log("scene name found:", sceneName);
-        var themeObj = checkForThemes(msg);
-        TwitterController.findSceneByName(sceneName,themeObj.theme);
-    }else{
+        var themeObj = checkForThemes(text);
+        TwitterController.findSceneByName(sceneName, themeObj.theme);
+    } else {
         console.log("no #scene: found, please make sure to inform the user to add the requested information to their tweet")
     }
 };
-var checkForThemes = function(msg){
+var checkForThemes = function (msg) {
     var strArr = msg.split(' ');
     if (strArr.indexOf('#theme:') !== -1) {
         var i = strArr.indexOf('#theme:');
-        var themeName = strArr[i+1];
+        var themeName = strArr[i + 1];
         console.log("theme name found:", themeName);
-        return {exists:true,theme:themeName};
-    }else{
-        return {exists:false,theme:null};
+        return {exists: true, theme: themeName};
+    } else {
+        return {exists: false, theme: null};
     }
 };
 var TwitterController = {
     authWithMF: function () {
-        var self =this;
+        var self = this;
         var args = {
-            data: { "password": process.env.MF_PASSWORD },
-            headers: { "Content-Type": "application/json" }
+            data: {"password": process.env.MF_PASSWORD},
+            headers: {"Content-Type": "application/json"}
         };
-        nodeClient.post(MFAPIConstants.PostRequestURLs.Auth,args,function(data,response){
+        nodeClient.post(MFAPIConstants.PostRequestURLs.Auth, args, function (data, response) {
             console.log(data)
             mfOjbect = data;
-            self.listenForTags("MediaFDev");
+            self.listenForTags("MediaFramework");
         })
 
     },
-    showScene:function(scene){
+    showScene: function (scene) {
         var args = {
-            data:{
+            data: {
                 "roomId": "twitter",
-                "play": {
-                    "scenes": [
-                        scene._id.toString()
-                    ],
-                    "themes": [
+                "scenes": [
+                    scene._id.toString()
+                ]
 
-                    ]
-                }
             },
-            headers: {"X-API-Key":mfOjbect.token, "Content-Type": "application/json" ,"accept":"application/json"}
+            headers: {"X-API-Key": mfOjbect.token, "Content-Type": "application/json", "accept": "application/json"}
         };
-        console.log(args)
-        nodeClient.post(MFAPIConstants.PostRequestURLs.ShowScene,args,function(data,response){
-            console.log("scene response" ,data)
+        nodeClient.post(MFAPIConstants.PostRequestURLs.ShowScene, args, function (data, response) {
+            console.log("scene response", data,mfOjbect.token)
         })
     },
-    showSceneWithTheme:function(scene,themes,callback){
+    showSceneWithTheme: function (scene, themes, callback) {
         var args = {
-            data:{
+            data: {
                 "roomId": "twitter",
                 "play": {
                     "scenes": [
@@ -86,34 +80,47 @@ var TwitterController = {
                     ]
                 }
             },
-            headers: {"X-API-Key":mfOjbect.token, "Content-Type": "application/json" ,"accept":"application/json"}
+            headers: {"X-API-Key": mfOjbect.token, "Content-Type": "application/json", "accept": "application/json"}
         };
-        nodeClient.post( MFAPIConstants.PostRequestURLs.ShowSceneTheme,args,function(data,response){
-            console.log("scene and theme requests response",data)
+        nodeClient.post(MFAPIConstants.PostRequestURLs.ShowSceneTheme, args, function (data, response) {
+            console.log("scene and theme requests response", data)
         });
     },
-    findSceneByName:function(scene,theme){
+    findSceneByName: function (scene, theme) {
         var args = {
-            headers: {"X-API-Key":mfOjbect.token,"sceneName":scene,"accept":"application/json, application/json; charset=utf-8"}
+            headers: {
+                "X-API-Key": mfOjbect.token,
+                "sceneName": scene,
+                "accept": "application/json, application/json; charset=utf-8"
+            }
         };
-        var self=this;
-        var req = nodeClient.get(MFAPIConstants.GetRequestURLs.FindSceneByName,args,function(data,response){
-            if(theme){
-                var hasTheme= data.themes.hasOwnProperty(theme)
-                if(hasTheme){
-                    console.log("Scene has theme")
-                    self.showSceneWithTheme(data,theme,function(err,data){
-                        console.log(err,data)
-                    })
-                }else{
-                    console.log("Scene does not have a theme")
+        var self = this;
+        var req = nodeClient.get(MFAPIConstants.GetRequestURLs.FindSceneByName, args, function (data, response) {
+            console.log(data)
+            if (response.statusCode == 200) {
+                console.log("scene-data", data._id);
+                if (theme) {
+                    if (data.theme == undefined) {
+                        var hasTheme = data.themes.hasOwnProperty(theme);
+                        if (hasTheme) {
+                            console.log("Scene has theme",theme)
+                            self.showSceneWithTheme(data, theme, function (err, data) {
+                                console.log(err, data)
+                            })
+                        } else {
+                            console.log("Scene does not have that theme", data.themes)
+                            self.showScene(data)
+                        }
+                    }
+
+                } else {
+                    console.log("Playing scene", data.name)
                     self.showScene(data)
                 }
-            }else{
-                console.log("Playing scene",data.name)
-                self.showScene(data)
-            }
 
+            } else {
+                console.log("no scene found")
+            }
 
 
         });
@@ -131,10 +138,10 @@ var TwitterController = {
         });
     },
     listenForTags: function (tagString) {
-        var self =this;
+        var self = this;
         var stream = client.stream('statuses/filter', {track: tagString});
         stream.on('data', function (event) {
-            console.log("data",event.text);
+            console.log("data", event.text);
             checkForScenes(event.text);
         });
         stream.on('error', function (error) {
