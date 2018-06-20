@@ -36,9 +36,9 @@ var IndustryScenes = [
     {
         sceneId: '5b1a58eca8aeee241f28407a',
         themes: ["Jade", "Henri", "Gordon-Fletcher", "MariaBW", "Neil-Christie", "John-Sibbald",
-            "David-Spicer", "AdamF", "Muhammad-Asim-Arro", "Josh", "Henri-Murison", "Sarah Martin",
-            "Sara Simeone", "Andy Lovatt", "Guy Weaver", "Ashley Boroda", "Vimla Appadoo", "Tom Cheesewright",
-            "Alison Mckenzie-Folan", "Martin Bryant", "Ruth Harrison", "BiosTimeline"
+            "David-Spicer", "AdamF", "Muhammad-Asim-Arro", "Josh", "Henri-Murison", "Sarah-Martin",
+            "Sara-Simeone", "Andy-Lovatt", "Guy-Weaver", "Ashley-Boroda", "Vimla-Appadoo", "Tom-Cheesewright",
+            "Alison-Mckenzie-Folan", "Martin-Bryant", "Ruth-Harrison", "BiosTimeline"
         ]
     },
     {
