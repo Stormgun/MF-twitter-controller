@@ -69,6 +69,40 @@ var checkForThemes = function (msg) {
     }
 };
 
+var TAGHACK = function (word) {
+    switch (word.toUpperCase()) {
+        case "SUPPORTERS":
+            return "Supporters"
+            break;
+        case "LIVE":
+            return "Live"
+            break;
+        case "VIDEOS":
+            return "Videos"
+            break;
+        case "IMAGES":
+            return "Images"
+            break;
+        case "BLOGS":
+            return "BiosTimeline"
+            break;
+        case "BIOGS":
+            return "BiosTimeline"
+            break;
+        case "BIOS":
+            return "BiosTimeline"
+            break;
+        case "TECHNATION":
+            return "TechNationTimeline"
+            break;
+        case "AGENDA":
+            return "AgendaTimeline"
+            break;
+        default:
+            return word;
+            break;
+    }
+};
 
 var CheckForKeyWords = function (text) {
     var wordArray = text.split(/\s+/);
@@ -78,8 +112,9 @@ var CheckForKeyWords = function (text) {
     _.each(wordArray, function (word) {
         _.each(IndustryScenes, function (scene) {
             if (_.includes(scene.themes, word)) {
+                var properWord = TAGHACK(word)
                 scenes.push(scene.sceneId);
-                themes.push(word);
+                themes.push(properWord);
             }
         })
     });
@@ -92,13 +127,13 @@ var TwitterController = {
     authWithMF: function () {
         var self = this;
         var args = {
-            data: {"password": process.env.MF_PASSWORD,"username": process.env.MF_USERNAME},
+            data: {"password": process.env.MF_PASSWORD, "username": process.env.MF_USERNAME},
             headers: {"Content-Type": "application/json"}
         };
         nodeClient.post(MFAPIConstants.PostRequestURLs.Auth, args, function (data, response) {
             console.log(data)
             mfOjbect = data;
-            self.listenForTags("MediaFramework");
+            self.listenForTags(process.env.TAG);
         })
 
     },
