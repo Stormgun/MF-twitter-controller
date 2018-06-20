@@ -142,8 +142,8 @@ var TwitterController = {
                 "themes": themes
             }
         };
-        console.log("scenes and themes",args)
-        socket.emit("sendCommand", "twitter", 'showScenesAndThemes', args);
+        console.log("scenes and themes",args);
+        socket.emit("sendCommand", "industry4", 'showScenesAndThemes', args);
     },
     showSceneWithTheme: function (scene, themes, callback) {
         var args = {
@@ -156,7 +156,7 @@ var TwitterController = {
                 ]
             }
         };
-        socket.emit("sendCommand", "twitter", 'showScenesAndThemes', args);
+        socket.emit("sendCommand", "industry4", 'showScenesAndThemes', args);
     },
     findSceneByName: function (scene, theme) {
         var self = this;
