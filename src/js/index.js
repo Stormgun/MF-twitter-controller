@@ -84,7 +84,7 @@ var CheckForKeyWords = function (text) {
         })
     });
     scenes = _.uniq(scenes);
-    TwitterController.showSceneWithTheme(scenes, themes);
+    TwitterController.showScenesWithThemes(scenes, themes);
 };
 
 
@@ -117,7 +117,7 @@ var TwitterController = {
             console.log("scene response", data, mfOjbect.token)
         })
     },
-    showSceneWithTheme: function (scenes, themes) {
+    showScenesWithThemes: function (scenes, themes) {
         var args = {
             data: {
                 "roomId": "industry4",
