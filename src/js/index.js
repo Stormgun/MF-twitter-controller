@@ -113,7 +113,7 @@ var CheckForKeyWords = function (text) {
 
     _.each(wordArray, function (word) {
         _.each(IndustryScenes, function (scene) {
-            if (_.includes(scene.themes, word)) {
+            if (_.includes(scene.themes, TAGHACK(word))) {
                 var properWord = TAGHACK(word)
                 scenes.push(scene.sceneId);
                 themes.push(properWord);
@@ -159,16 +159,13 @@ var TwitterController = {
             data: {
                 "roomId": "industry4",
                 "play": {
-                    "scenes": [
-                        scenes
-                    ],
-                    "themes": [
-                        themes
-                    ]
+                    "scenes": scenes,
+                    "themes": themes
                 }
             },
             headers: {"X-API-Key": mfOjbect.token, "Content-Type": "application/json", "accept": "application/json"}
         };
+        console.log("args", args.toString(), scenes.toString(), themes.toString())
         nodeClient.post(MFAPIConstants.PostRequestURLs.ShowSceneTheme, args, function (data, response) {
             console.log("scene and theme requests response", data)
         });
