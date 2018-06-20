@@ -133,7 +133,7 @@ var TwitterController = {
                 "themes": []
             },
         };
-        socket.emit("sendCommand", "twitter", 'showScenesAndThemes', args);
+        socket.emit("sendCommand", "industry4", 'showScenesAndThemes', args);
     },
     showScenesWithThemes:function(scenes,themes){
         var args = {
