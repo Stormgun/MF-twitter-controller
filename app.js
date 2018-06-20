@@ -15,7 +15,7 @@ server.listen(port, hostname,function (){
         if(err){
                 throw "quit it";
         }else{
-            TwitterController.listenForTags('MediaFDev');
+            TwitterController.listenForTags(process.env.TAG);
         }
     });
 
