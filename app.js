@@ -1,7 +1,7 @@
 const http = require('http');
 
 var hostname = '127.0.0.1';
-var port = 3000;
+var port = 3007;
 var TwitterController = require('./src/js/index');
 var server = http.createServer(function(req, res) {
     res.statusCode = 200;
@@ -15,7 +15,7 @@ server.listen(port, hostname,function (){
         if(err){
                 throw "quit it";
         }else{
-            TwitterController.listenForTags('MediaFDev');
+            TwitterController.listenForTags(process.env.TAG);
         }
     });
 
