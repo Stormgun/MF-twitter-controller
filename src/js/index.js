@@ -1,4 +1,6 @@
 var Twitter = require('twitter');
+var _ = require("lodash");
+var Client = require('node-rest-client').Client;
 
 var IndustryScenes = [
     {
@@ -39,7 +41,7 @@ var client = new Twitter({
     access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
-var Client = require('node-rest-client').Client;
+
 var options = {
     mimetypes: {json: ['application/json', 'application/json; charset=utf-8']},
 };
