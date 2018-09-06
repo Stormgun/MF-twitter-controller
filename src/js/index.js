@@ -92,7 +92,7 @@ var CeramicScenes = {
     },
     wheel: {
         detaching: {sceneId: '5b45e65be4e95eac03922865', theme: "Detaching"},
-        rolling: {sceneId: '5b45dbe3e4e95eac03922859', theme: "rolling"},
+        rolling: {sceneId: '5b45db68e4e95eac03922858', theme: "rolling"},
         extruding: {sceneId: '5b45dd91e4e95eac0392285c', theme: "extruding"},
     }
 };
