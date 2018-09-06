@@ -82,7 +82,7 @@ var CeramicScenes = {
         }
     },
     texture: {
-        smooth: {sceneid: '5b54dac5bfcf1b60279b6086', theme: "Smooth"},
+        smooth: {sceneId: '5b54dac5bfcf1b60279b6086', theme: "Smooth"},
         rough: {sceneId: '5b54df28bfcf1b60279b608e', theme: "Rough"},
         rustic: {sceneId: 'vis_v3_Texture_T7_Rustic', theme: "Rustic"},
         brushstroke: {sceneId: '5b54e14fbfcf1b60279b6092', theme: "BrushStroke"},
