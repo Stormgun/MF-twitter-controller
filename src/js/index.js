@@ -96,7 +96,7 @@ var CeramicScenes = {
     }
 };
 var GDCScenes = {
-    Dalian: {
+    dalian: {
         seafood: {
             sceneId: '57963acdea09c8f426aaa923', theme: ''
         },
@@ -105,7 +105,7 @@ var GDCScenes = {
         architecture: {sceneId: '57963cbbea09c8f426aaa92f', theme: ''},
         transport: {sceneId: '57963e8cea09c8f426aaa97f', theme: ''},
     },
-    HongKong: {
+    honkkong: {
         language: {
             sceneId: '57962f0dea09c8f426aaa890', theme: ''
         },
@@ -114,7 +114,7 @@ var GDCScenes = {
         nightlife: {sceneId: '579888ccec1e72d8833fe555', theme: ''},
 
     },
-    Seoul: {
+    seoul: {
         nightlife: {
             sceneId: '5790a6e22e00bd003d6409dd', theme: ''
         },
@@ -132,7 +132,7 @@ var GDCScenes = {
         nightlife: {sceneId: '57978d5e8fae87707010e9f4', theme: ''},
         technology: {sceneId: '5797354581a29c700e9de538', theme: ''},
     },
-    Chicago: {
+    chicago: {
         sports: {
             sceneId: '57960d05ea09c8f426aaa71a', theme: ''
         },
@@ -140,19 +140,19 @@ var GDCScenes = {
         art: {sceneId: '5790a8ae2e00bd003d640c76', theme: ''},
         architecture: {sceneId: '57960ca3ea09c8f426aaa70e', theme: ''},
     },
-    Manchester: {
+    manchester: {
         architecture: {sceneId: '579a44ba792e8b3c827d38fc', theme: 'Place'},
         dialect: {sceneId: "5798cc405250423075a28737", theme: 'Diversity'},
         people: {sceneId: '579a3253792e8b3c827d2cd2', theme: ""}
     },
-    Shenyang: {
+    shenyang: {
         sports: {sceneId: '5796a26481a29c700e9dd349', theme: ""},
         art: {sceneId: '5796a2ed81a29c700e9dd357', theme: ""},
         cuisine: {sceneId: '5797376d81a29c700e9de545', theme: ''},
         transport: {sceneId: '5797e9c6ec1e72d8833fd0ae', theme: ''},
 
     },
-    Beijin: {
+    beijin: {
         food: {
             sceneId: '579615b5ea09c8f426aaa765', theme: ''
         },
@@ -160,7 +160,7 @@ var GDCScenes = {
         art: {sceneId: '5796150dea09c8f426aaa762', theme: ''},
         architecture: {sceneId: '5795b24150d782446f21d1b1', theme: ''},
     },
-    KualaLumpur: {
+    kualalumpur: {
         food: {
             sceneId: '57971c9181a29c700e9ddab5', theme: ''
         },
@@ -169,7 +169,7 @@ var GDCScenes = {
         nightlife: {sceneId: '57978d5e8fae87707010e9f4', theme: ''},
         sports: {sceneId: '57978ef88fae87707010ea15', theme: ''},
     },
-    GDC: {
+    gdc: {
         workshop: {sceneId: '57a10f37a0f02df8ad9f0854', theme: ''}
     }
 
