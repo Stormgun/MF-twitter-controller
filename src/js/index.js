@@ -98,79 +98,78 @@ var CeramicScenes = {
 var GDCScenes = {
     dalian: {
         seafood: {
-            sceneId: '57963acdea09c8f426aaa923', theme: ''
+            sceneId: '57963acdea09c8f426aaa923', theme: 'shrimp,shellfish,crabs,algae'
         },
-        wave: {sceneId: '57963aeaea09c8f426aaa924', theme: ''},
-        sports: {sceneId: '57963e59ea09c8f426aaa97d', theme: ''},
-        architecture: {sceneId: '57963cbbea09c8f426aaa92f', theme: ''},
-        transport: {sceneId: '57963e8cea09c8f426aaa97f', theme: ''},
+        wave: {sceneId: '57963aeaea09c8f426aaa924', theme: 'natural environment'},
+        sports: {sceneId: '57963e59ea09c8f426aaa97d', theme: 'Honor,A generation of people\'s memories'},
+        architecture: {sceneId: '57963cbbea09c8f426aaa92f', theme: 'style,fuse,collision'},
+        transport: {sceneId: '57963e8cea09c8f426aaa97f', theme: 'City symbol,memory'},
     },
     honkkong: {
         language: {
-            sceneId: '57962f0dea09c8f426aaa890', theme: ''
+            sceneId: '57962f0dea09c8f426aaa890', theme: 'History,Culture'
         },
-        landscape: {sceneId: '57962ee1ea09c8f426aaa88d', theme: ''},
-        culture: {sceneId: '57962d51ea09c8f426aaa883', theme: ''},
-        nightlife: {sceneId: '579888ccec1e72d8833fe555', theme: ''},
+        culture: {sceneId: '57962d51ea09c8f426aaa883', theme: 'traditional character,temple,geomancy'},
+        nightlife: {sceneId: '579888ccec1e72d8833fe555', theme: 'night club,night market,night street'},
 
     },
     seoul: {
         nightlife: {
-            sceneId: '5790a6e22e00bd003d6409dd', theme: ''
+            sceneId: '5790a6e22e00bd003d6409dd', theme: 'nightlive'
         },
-        art: {sceneId: '57912fec2e00bd003d6421b4', theme: ''},
-        fun: {sceneId: '57913b4a2e00bd003d642398', theme: ''},
-        architecture: {sceneId: '5791db812e00bd003d6426af', theme: ''},
-        transport: {sceneId: '5791dced2e00bd003d6426b3', theme: ''},
+        art: {sceneId: '57912fec2e00bd003d6421b4', theme: 'Artandtechnology'},
+        fun: {sceneId: '57913b4a2e00bd003d642398', theme: 'color of liveliness,lively'},
+        architecture: {sceneId: '5791db812e00bd003d6426af', theme: 'neighborhood,골목골목,atpmosphere'},
+        transportation: {sceneId: '5791dced2e00bd003d6426b3', theme: 'transportation'},
     },
     Chengdu: {
         architecture: {
-            sceneId: '5797358f81a29c700e9de53b', theme: ''
+            sceneId: '5797358f81a29c700e9de53b', theme: 'background only,Beautiful place,Crowed place,impressive place'
         },
-        language: {sceneId: '57988329ec1e72d8833fdf3e', theme: ''},
-        art: {sceneId: '57992a48c6da2cd058e5a63b', theme: ''},
-        nightlife: {sceneId: '57978d5e8fae87707010e9f4', theme: ''},
-        technology: {sceneId: '5797354581a29c700e9de538', theme: ''},
+        language: {sceneId: '57988329ec1e72d8833fdf3e', theme: 'background only,culture,dialect,mandarin,native music'},
+        art: {sceneId: '57992a48c6da2cd058e5a63b', theme: 'background only,performance,street,art,gallery'},
+        nightlife: {sceneId: '57978d5e8fae87707010e9f4', theme: 'Nightclub,Club Deejay,People'},
+        technology: {sceneId: '5797354581a29c700e9de538', theme: 'background only,warcraft,spaceflight'},
     },
     chicago: {
         sports: {
-            sceneId: '57960d05ea09c8f426aaa71a', theme: ''
+            sceneId: '57960d05ea09c8f426aaa71a', theme: 'Teams'
         },
-        people: {sceneId: '57960ca9ea09c8f426aaa70f', theme: 'People'},
-        art: {sceneId: '5790a8ae2e00bd003d640c76', theme: ''},
-        architecture: {sceneId: '57960ca3ea09c8f426aaa70e', theme: ''},
+        people: {sceneId: '57960ca9ea09c8f426aaa70f', theme: 'People,Culture'},
+        art: {sceneId: '5790a8ae2e00bd003d640c76', theme: 'Visual Art,Graffiti,Performance'},
+        architecture: {sceneId: '57960ca3ea09c8f426aaa70e', theme: 'Modern,Traditional'},
     },
     manchester: {
         architecture: {sceneId: '579a44ba792e8b3c827d38fc', theme: 'Place'},
         dialect: {sceneId: "5798cc405250423075a28737", theme: 'Diversity'},
-        people: {sceneId: '579a3253792e8b3c827d2cd2', theme: ""}
+        people: {sceneId: '579a3253792e8b3c827d2cd2', theme: "People,Student"}
     },
     shenyang: {
-        sports: {sceneId: '5796a26481a29c700e9dd349', theme: ""},
-        art: {sceneId: '5796a2ed81a29c700e9dd357', theme: ""},
-        cuisine: {sceneId: '5797376d81a29c700e9de545', theme: ''},
-        transport: {sceneId: '5797e9c6ec1e72d8833fd0ae', theme: ''},
+        sports: {sceneId: '5796a26481a29c700e9dd349', theme: "Shenyang Marathon,background,Morning run,Square,sport,The 12th national games,A popular movement"},
+        art: {sceneId: '5796a2ed81a29c700e9dd357', theme: "couple dance opera,yangko,Mukden drum,paper-cut"},
+        cuisine: {sceneId: '5797376d81a29c700e9de545', theme: 'Eatintg habits,food'},
+        transport: {sceneId: '5797e9c6ec1e72d8833fd0ae', theme: 'crowd,convenient, subway'},
 
     },
     beijin: {
         food: {
-            sceneId: '579615b5ea09c8f426aaa765', theme: ''
+            sceneId: '579615b5ea09c8f426aaa765', theme: 'The Streets,Foodie Hotspots'
         },
-        people: {sceneId: '5795b66950d782446f21d235', theme: ''},
-        art: {sceneId: '5796150dea09c8f426aaa762', theme: ''},
-        architecture: {sceneId: '5795b24150d782446f21d1b1', theme: ''},
+        people: {sceneId: '5795b66950d782446f21d235', theme: 'Architecture,Citizens,Home'},
+        art: {sceneId: '5796150dea09c8f426aaa762', theme: 'Music,Art'},
+        architecture: {sceneId: '5795b24150d782446f21d1b1', theme: 'Modern,Traditional'},
     },
     kualalumpur: {
         food: {
-            sceneId: '57971c9181a29c700e9ddab5', theme: ''
+            sceneId: '57971c9181a29c700e9ddab5', theme: 'Food,Drinks,Fruit,Dessert,Flavours,Scene Explanation'
         },
-        language: {sceneId: '578fe68e2e00bd003d63f6f1', theme: ''},
-        youth: {sceneId: '57977c3d8fae87707010e7e0', theme: ''},
-        nightlife: {sceneId: '57978d5e8fae87707010e9f4', theme: ''},
-        sports: {sceneId: '57978ef88fae87707010ea15', theme: ''},
+        language: {sceneId: '578fe68e2e00bd003d63f6f1', theme: 'Language,Sentence,Scene Explaination,loanwords, english to malay, malay to mandarin'},
+        youth: {sceneId: '57977c3d8fae87707010e7e0', theme: 'Youth Platform,Movement'},
+        nightlife: {sceneId: '57978d5e8fae87707010e9f4', theme: 'Nightclub,Club Deejay,People'},
+        sports: {sceneId: '57978ef88fae87707010ea15', theme: 'Squad,Impact,Regulation,Circuit'},
     },
     gdc: {
-        workshop: {sceneId: '57a10f37a0f02df8ad9f0854', theme: ''}
+        workshop: {sceneId: '57a10f37a0f02df8ad9f0854', theme: 'GDC,sound from heart'}
     }
 
 };
@@ -234,7 +233,10 @@ var checkGDC = function (wordArray) {
                 var key = Object.keys(topicObj)[idxx];
                 var topicSubObj = topicObj[key];
                 scenes.push(topicSubObj.sceneId);
-                themes.push(topicSubObj.theme);
+                var themearray = topicSubObj.theme.split(',');
+                _.each(themearray,function(t){
+                    themes.push(t);
+                })
 
             } else {
                 _.each(Object.keys(GDCScenes), function (topic, i) {
@@ -246,14 +248,21 @@ var checkGDC = function (wordArray) {
                         var topicSubObj = topicObj[key];
                         console.log("we matched with a topic", topicObj, topicSubObj)
                         scenes.push(topicSubObj.sceneId);
-                        themes.push(topicSubObj.theme);
+                        var themearray = topicSubObj.theme.split(',');
+                        _.each(themearray,function(t){
+                            themes.push(t);
+                        })
 
                     }
                     else if (_.includes(Object.keys(GDCScenes[topic]), word.toLowerCase())) {
                         var propTop = GDCScenes[topic];
-                        console.log("We matched with a theme", word, propTop)
+                        console.log("We matched with a theme", word)
                         scenes.push(propTop[word].sceneId);
-                        themes.push(propTop[word].theme);
+                        var themearray = propTop[word].theme.split(',');
+                        _.each(themearray,function(t){
+                            themes.push(t);
+                        })
+
 
                     } else {
                         console.log("not match")
@@ -285,8 +294,10 @@ var checkCeramic = function (wordArray) {
                 var key = Object.keys(topicObj)[idxx];
                 var topicSubObj = topicObj[key];
                 scenes.push(topicSubObj.sceneId);
-                themes.push(topicSubObj.theme);
-
+                var themearray = topicSubObj.theme.split(',');
+                _.each(themearray,function(t){
+                    themes.push(t);
+                })
             } else {
                 _.each(Object.keys(CeramicScenes), function (topic, i) {
 
@@ -297,14 +308,22 @@ var checkCeramic = function (wordArray) {
                         var topicSubObj = topicObj[key];
                         console.log("we matched with a topic", topicObj, topicSubObj)
                         scenes.push(topicSubObj.sceneId);
-                        themes.push(topicSubObj.theme);
+                        var themearray =topicSubObj.theme.split(',');
+                        _.each(themearray,function(t){
+                            themes.push(t);
+                        })
+
 
                     }
                     else if (_.includes(Object.keys(CeramicScenes[topic]), word.toLowerCase())) {
                         var propTop = CeramicScenes[topic];
                         console.log("We matched with a theme", word, propTop)
                         scenes.push(propTop[word].sceneId);
-                        themes.push(propTop[word].theme);
+                        var themearray = propTop[word].theme.split(',');
+                        _.each(themearray,function(t){
+                            themes.push(t);
+                        })
+
 
                     } else {
                         console.log("not match")
@@ -355,8 +374,8 @@ var TwitterController = {
                 "themes": []
             },
         };
-        socket.emit("sendCommand", "conference2018", 'showScenesAndThemes', args);
-        socket.emit("sendCommand", "conference2018", 'playScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018D", 'showScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018D", 'playScenesAndThemes', args);
     },
     showScenesWithThemes: function (scenes, themes) {
         var args = {
@@ -366,8 +385,8 @@ var TwitterController = {
             }
         };
         console.log("scenes and themes", args);
-        socket.emit("sendCommand", "conference2018", 'showScenesAndThemes', args);
-        socket.emit("sendCommand", "conference2018", 'playScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018D", 'showScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018D", 'playScenesAndThemes', args);
     },
     showSceneWithTheme: function (scene, themes, callback) {
         var args = {
@@ -380,8 +399,8 @@ var TwitterController = {
                 ]
             }
         };
-        socket.emit("sendCommand", "conference2018", 'showScenesAndThemes', args);
-        socket.emit("sendCommand", "conference2018", 'playScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018D", 'showScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018D", 'playScenesAndThemes', args);
     },
     findSceneByName: function (scene, theme) {
         var self = this;
@@ -418,7 +437,6 @@ var TwitterController = {
             CheckForKeyWords(event.text);
         });
         stream.on('error', function (error) {
-            console.log(error);
             if (error.statusCode === 420) {
                 console.log("Returned when an app is being rate limited for making too many requests.")
             }
