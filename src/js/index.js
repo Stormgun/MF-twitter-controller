@@ -65,7 +65,6 @@ var CeramicScenes = {
         drop: {sceneId: '5b477bd3e4e95eac039228a5', theme: 'Water Drop Overlays'}
     },
     kiln: {
-
         smoke: {sceneId: '5b479424e4e95eac039228c0', theme: "Smoke"},
         smash: {sceneId: '5b4796dfe4e95eac039228c5', theme: "Smash"},
         pots: {sceneId: '5b4792d4e4e95eac039228bc', theme: "Overlay 3 Pots"},
@@ -210,39 +209,64 @@ var CheckForKeyWords = function (text) {
     var scenes = [];
     var themes = [];
     var score = checkCeramic(wordArray);
-    scenes = _.uniq(score.scenes);
-    themes = score.themes;
+    var score2 = checkGDC(wordArray);
+    var sscenes = _.union(score.scenes,score2.scenes);
+    var sthemes =_.union(score.themes,score2.themes);
+    scenes = _.uniq(sscenes);
+    themes = _.uniq(sthemes);
     console.log("angel", themes, scenes);
     TwitterController.showScenesWithThemes(scenes, themes);
 };
 var checkGDC = function (wordArray) {
+    try {
+        var scenes = [];
+        var themes = [];
 
-    var scenes = [];
-    var themes = [];
+        _.each(wordArray, function (word) {
+            if (word.toLowerCase() === "gdc") {
+                console.log("someone said gdc")
+                var idx = Math.floor(Math.random() * Object.keys(GDCScenes).length)
+                var topicKey = Object.keys(GDCScenes)[idx];
+                var topicObj = GDCScenes[topicKey];
 
-    _.each(wordArray, function (word) {
-        if (word.toLowerCase() === "gdc") {
-            var idx = Math.floor(Math.random() * Object.keys(GDCScenes).length + 1)
-            var topic = Object.keys(GDCScenes)[idx];
-            var idxx = Math.floor(Math.random() * topic.length + 1)
-            scenes.push(topic[idxx]);
+                console.log(topicObj, idx, Object.keys(GDCScenes).length)
+                var idxx = Math.floor(Math.random() * Object.keys(topicObj).length)
+                var key = Object.keys(topicObj)[idxx];
+                var topicSubObj = topicObj[key];
+                scenes.push(topicSubObj.sceneId);
+                themes.push(topicSubObj.theme);
 
-        } else {
-            _.each(Object.keys(GDCScenes), function (topic) {
-                if (_.includes(topic.themesAliases, word)) {
-                    scenes.push(topic.sceneId);
-                    themes.push(topic.theme);
-                }
-            })
-        }
+            } else {
+                _.each(Object.keys(GDCScenes), function (topic, i) {
 
-        _.each(IndustryScenes, function (scene) {
-            if (_.includes(scene.themes, word)) {
-                scenes.push(scene.sceneId);
-                themes.push(word);
+                    if (topic === word.toLowerCase()) {
+                        var topicObj = GDCScenes[topic];
+                        var idx = Math.floor(Math.random() * Object.keys(topicObj).length)
+                        var key = Object.keys(topicObj)[idx];
+                        var topicSubObj = topicObj[key];
+                        console.log("we matched with a topic", topicObj, topicSubObj)
+                        scenes.push(topicSubObj.sceneId);
+                        themes.push(topicSubObj.theme);
+
+                    }
+                    else if (_.includes(Object.keys(GDCScenes[topic]), word.toLowerCase())) {
+                        var propTop = GDCScenes[topic];
+                        console.log("We matched with a theme", word, propTop)
+                        scenes.push(propTop[word].sceneId);
+                        themes.push(propTop[word].theme);
+
+                    } else {
+                        console.log("not match")
+                    }
+                })
             }
-        })
-    });
+
+        });
+        return {scenes: scenes, themes: themes}
+    } catch (e) {
+        console.log(e, "but we are still running")
+        return {scenes: [], themes: []};
+    }
 }
 var checkCeramic = function (wordArray) {
     try {
@@ -331,8 +355,8 @@ var TwitterController = {
                 "themes": []
             },
         };
-        socket.emit("sendCommand", "conference2018D", 'showScenesAndThemes', args);
-        socket.emit("sendCommand", "conference2018D", 'playScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018", 'showScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018", 'playScenesAndThemes', args);
     },
     showScenesWithThemes: function (scenes, themes) {
         var args = {
@@ -342,8 +366,8 @@ var TwitterController = {
             }
         };
         console.log("scenes and themes", args);
-        socket.emit("sendCommand", "conference2018D", 'showScenesAndThemes', args);
-        socket.emit("sendCommand", "conference2018D", 'playScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018", 'showScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018", 'playScenesAndThemes', args);
     },
     showSceneWithTheme: function (scene, themes, callback) {
         var args = {
@@ -356,8 +380,8 @@ var TwitterController = {
                 ]
             }
         };
-        socket.emit("sendCommand", "conference2018D", 'showScenesAndThemes', args);
-        socket.emit("sendCommand", "conference2018D", 'playScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018", 'showScenesAndThemes', args);
+        socket.emit("sendCommand", "conference2018", 'playScenesAndThemes', args);
     },
     findSceneByName: function (scene, theme) {
         var self = this;
