@@ -2,10 +2,12 @@ const http = require('http');
 
 var hostname = '127.0.0.1';
 var port = 3007;
+
 var TwitterController = require('./src/js/index');
+
 var server = http.createServer(function(req, res) {
     res.statusCode = 200;
-res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Type', 'text/plain');
 });
 
 server.listen(port, hostname,function (){
